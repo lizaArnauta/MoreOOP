@@ -13,7 +13,7 @@ public class HobbitTest {
 
     @BeforeEach
     public void init() {
-        character = new Hobbit();
+        character = new Hobbit(0, 0);
     }
 
     @Test

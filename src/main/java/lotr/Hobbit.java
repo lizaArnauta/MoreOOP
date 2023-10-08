@@ -1,8 +1,8 @@
 package lotr;
 
 public class Hobbit extends Character {
-    public Hobbit() {
-        super(0, 3); 
+    public Hobbit(int power, int hp) {
+        super(power, hp); 
     }
 
     @Override

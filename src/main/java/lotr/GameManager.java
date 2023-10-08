@@ -33,7 +33,7 @@ public class GameManager {
 
     public static void main(String[] args) {
         Knight knight = new Knight();
-        Hobbit hobbit = new Hobbit();
+        Hobbit hobbit = new Hobbit(0, 0);
 
         GameManager gameManager = new GameManager();
         gameManager.fight(knight, hobbit);

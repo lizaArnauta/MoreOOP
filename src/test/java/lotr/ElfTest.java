@@ -18,7 +18,7 @@ public class ElfTest {
 
     @Test
     public void testKick() {
-        Hobbit hobbit = new Hobbit();
+        Hobbit hobbit = new Hobbit(0, 0);
         character.kick(hobbit);
         assertEquals(0, hobbit.getHp());
     }

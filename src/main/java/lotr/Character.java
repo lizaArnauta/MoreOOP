@@ -1,4 +1,5 @@
 package lotr;
+
 public class Character {
     private int power; 
     private int hp;    
