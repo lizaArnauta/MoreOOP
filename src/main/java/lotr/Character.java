@@ -1,8 +1,8 @@
 package lotr;
 
 public class Character {
-    private int power; 
-    private int hp;    
+    private int power;
+    private int hp;
 
     public Character(int power, int hp) {
         this.power = power;
