@@ -1,39 +1,37 @@
 package lotr;
 
-public class Character {
-    private int power;
+import kick.KickStrategy;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
+
+@AllArgsConstructor
+public abstract class Character {
+    @Getter
     private int hp;
+    @Getter
+    private int power;
+    @Setter
+    private KickStrategy kick;
 
-    public Character(int power, int hp) {
-        this.power = power;
-        this.hp = hp;
-    }
-
-    public void kick(Character c) {
-        c.takeDamage(power);
-    }
-
-    protected void takeDamage(int damage) {
-        hp -= damage;
+    public void kick(Character opponent) {
+        if (kick != null) {
+            kick.kick(this, opponent);
+        } else {
+            System.out.println("No kick strategy set for " + this.getClass().getSimpleName());
+        }
     }
 
     public boolean isAlive() {
-        return hp > 0;
-    }
-
-    public int getPower() {
-        return power;
-    }
-
-    public void setPower(int power) {
-        this.power = power;
-    }
-
-    public int getHp() {
-        return hp;
+        return getHp() > 0;
     }
 
     public void setHp(int hp) {
-        this.hp = Math.max(hp, 0);
+        this.hp = hp > 0 ? hp : 0;
+    }
+
+    @Override
+    public String toString() {
+        return this.getClass().getSimpleName() + "{hp=" + getHp() + ", power=" + getPower() + "}";
     }
 }
