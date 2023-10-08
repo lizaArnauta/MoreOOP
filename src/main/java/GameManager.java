@@ -1,4 +1,8 @@
-package lotr;
+
+
+import lotr.Character;
+import lotr.Hobbit;
+import lotr.Knight;
 
 public class GameManager {
 
