@@ -1,11 +1,13 @@
 package lotr;
+import lotr.Elf;
+import lotr.Hobbit;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class ElfTest {
-    private Character character;
+    private lotr.Character character;
 
     @BeforeEach
     public void init() {
@@ -18,9 +20,8 @@ public class ElfTest {
 
     @Test
     public void testKick() {
-        Hobbit hobbit = new Hobbit(0, 0);
+        Hobbit hobbit = new Hobbit();
         character.kick(hobbit);
         assertEquals(0, hobbit.getHp());
     }
 }
-

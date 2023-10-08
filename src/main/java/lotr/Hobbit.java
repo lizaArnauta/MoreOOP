@@ -1,21 +1,11 @@
 package lotr;
 
-public class Hobbit extends Character {
-    public Hobbit(int power, int hp) {
-        super(power, hp); 
-    }
+import kick.CryKick;
+import lombok.Getter;
 
-    @Override
-    public String toString() {
-        return "Hobbit{hp=" + getHp() + ", power=" + getPower() + "}";
-    }
-
-    @Override
-    public void kick(Character c) {
-        toCry();
-    }
-
-    public void toCry() {
-        System.out.println("hobbit is crying so do i");
+@Getter
+public class Hobbit extends Character{
+    public Hobbit(){
+        super(3, 0, new CryKick());
     }
 }

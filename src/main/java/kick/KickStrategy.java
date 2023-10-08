@@ -1,6 +1,7 @@
 package kick;
+
 import lotr.Character;
 
 public interface KickStrategy {
-    void kick(Character whoKick, Character whoIsKicked);
+    void kick(Character whoKick, Character opponent);
 }

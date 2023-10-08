@@ -1,32 +1,15 @@
 package lotr;
-import java.util.ArrayList;
+
+import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 
-
-class Character {
-}
+import lombok.SneakyThrows;
 
 public class CharacterFactory {
-    private List<Character> existingCharacters;
-    private Random random;
-
-    public CharacterFactory() {
-        existingCharacters = new ArrayList<>();
-        existingCharacters.add(new Character());
-        existingCharacters.add(new Character());
-        existingCharacters.add(new Character());
-
-        random = new Random();
-    }
-
-    public Character createCharacter() {
-        int randomIndex = random.nextInt(existingCharacters.size());
-        return existingCharacters.get(randomIndex);
-    }
-
-    public static void main(String[] args) {
-        CharacterFactory characterFactory = new CharacterFactory();
-        Character randomCharacter = characterFactory.createCharacter();
+    @SneakyThrows
+    public static Character createCharacter() throws InstantiationException, IllegalAccessException{
+        List<Class<? extends Character>> characters = Arrays.asList(Hobbit.class);
+        return characters.get(new Random().nextInt(characters.size())).newInstance();
     }
 }
